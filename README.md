@@ -73,6 +73,7 @@ Para acessar a interface do chatbot, abra seu navegador e vá para `http://local
 
 Aqui está uma visão geral da estrutura do projeto:
 
+```
 ChatBotando/
 ├── langflow/
 ├── nginx/
@@ -81,6 +82,7 @@ ChatBotando/
 ├── .gitignore
 ├── docker-compose.yaml
 ├── README.md
+```
 
 - `langflow/`: Contém arquivos relacionados ao fluxo de conversação do chatbot.
 - `nginx/`: Configurações do servidor Nginx.
