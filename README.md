@@ -11,9 +11,12 @@ Este projeto visa criar um chatbot que pode responder a perguntas e fornecer inf
 
 Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-- Docker (https://www.docker.com/get-started)
-- Docker Compose (https://docs.docker.com/compose/install/)
-- Git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Open WebUI](https://github.com/open-webui/open-webui)
+- [Langflow](https://github.com/langflow-ai/langflow)
+- [PostgreSQL](https://www.postgresql.org/docs/current/tutorial-install.html)
 
 ## Instalação
 
