@@ -1,0 +1,55 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - webui
+      - langflow
+
+  webui:
+    image: ghcr.io/open-webui/open-webui:main
+    pull_policy: always
+    restart: always
+    volumes:
+      - ./open-webui/config/config.py:/app/backend/config.py
+      - ./open-webui/images/favicon.png:/app/build/static/favicon.png
+      - ./open-webui/images/favicon.png:/app/build/favicon.png
+      - ./open-webui/_data:/app/backend/data
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
+    depends_on:
+      - langflow
+      - postgres
+
+  langflow:
+    image: langflowai/langflow:latest
+    pull_policy: always
+    restart: always
+    volumes:
+      - ./langflow/data:/app/langflow
+    ports:
+      - 7860:7860
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    pull_policy: always
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/initdb:/docker-entrypoint-initdb.d
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

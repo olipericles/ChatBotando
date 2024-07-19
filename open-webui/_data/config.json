@@ -1,0 +1,137 @@
+{
+	"vers\u00e3o": 0,
+	"ui": {
+		"localidade_padr\u00e3o": "pt-BR",
+		"sugest\u00f5es_de_prompt": [
+			{
+				"t\u00edtulo": [
+					"Explore Salvador",
+					"roteiro cultural"
+				],
+				"conte\u00fado": "Quais s\u00e3o os melhores lugares culturais para visitar em Salvador? Fa\u00e7a um roteiro para um dia inteiro."
+			},
+			{
+				"t\u00edtulo": [
+					"Hist\u00f3ria de Salvador",
+					"curiosidades"
+				],
+				"conte\u00fado": "Conte-me uma curiosidade interessante sobre a hist\u00f3ria de Salvador."
+			},
+			{
+				"t\u00edtulo": [
+					"Comida t\u00edpica",
+					"onde encontrar"
+				],
+				"conte\u00fado": "Onde posso encontrar os melhores pratos t\u00edpicos baianos em Salvador?"
+			},
+			{
+				"t\u00edtulo": [
+					"Eventos culturais",
+					"calend\u00e1rio"
+				],
+				"conte\u00fado": "Quais eventos culturais est\u00e3o acontecendo em Salvador neste m\u00eas?"
+			},
+			{
+				"t\u00edtulo": [
+					"Museus em Salvador",
+					"recomenda\u00e7\u00f5es"
+				],
+				"conte\u00fado": "Quais museus voc\u00ea recomenda visitar em Salvador e por qu\u00ea?"
+			},
+			{
+				"t\u00edtulo": [
+					"Artesanato baiano",
+					"onde comprar"
+				],
+				"conte\u00fado": "Onde posso encontrar artesanato aut\u00eantico baiano em Salvador?"
+			},
+			{
+				"t\u00edtulo": [
+					"Roteiro hist\u00f3rico",
+					"pontos tur\u00edsticos"
+				],
+				"conte\u00fado": "Fa\u00e7a um roteiro hist\u00f3rico pelos principais pontos tur\u00edsticos de Salvador."
+			}
+		],
+		"default_models": "phi3:latest",
+		"user_permissions": {
+			"chat": {
+				"deletion": true
+			}
+		},
+		"prompt_suggestions": [
+			{
+				"title": [
+					"Explore Salvador",
+					"roteiro cultural"
+				],
+				"content": "Quais s\u00e3o os melhores lugares culturais para visitar em Salvador? Fa\u00e7a um roteiro para um dia inteiro."
+			},
+			{
+				"title": [
+					"Hist\u00f3ria de Salvador",
+					"curiosidades"
+				],
+				"content": "Conte-me uma curiosidade interessante sobre a hist\u00f3ria de Salvador."
+			},
+			{
+				"title": [
+					"Comida t\u00edpica",
+					"onde encontrar"
+				],
+				"content": "Onde posso encontrar os melhores pratos t\u00edpicos baianos em Salvador?"
+			},
+			{
+				"title": [
+					"Eventos culturais",
+					"calend\u00e1rio"
+				],
+				"content": "Quais eventos culturais est\u00e3o acontecendo em Salvador neste m\u00eas?"
+			},
+			{
+				"title": [
+					"Museus em Salvador",
+					"recomenda\u00e7\u00f5es"
+				],
+				"content": "Quais museus voc\u00ea recomenda visitar em Salvador e por qu\u00ea?"
+			},
+			{
+				"title": [
+					"Artesanato baiano",
+					"onde comprar"
+				],
+				"content": "Onde posso encontrar artesanato aut\u00eantico baiano em Salvador?"
+			},
+			{
+				"title": [
+					"Roteiro hist\u00f3rico",
+					"pontos tur\u00edsticos"
+				],
+				"content": "Fa\u00e7a um roteiro hist\u00f3rico pelos principais pontos tur\u00edsticos de Salvador."
+			}
+		],
+		"banners": []
+	},
+	"model_filter": {
+		"enable": false,
+		"list": [
+			""
+		]
+	},
+	"task": {
+		"model": {
+			"default": "",
+			"external": ""
+		},
+		"title": {
+			"prompt_template": "Aqui est\u00e1 a consulta:\n{{prompt:middletruncate:8000}}\n\nCrie uma frase concisa de 3-5 palavras com um emoji como t\u00edtulo para a consulta anterior. Emojis adequados para o resumo podem ser usados para melhorar a compreens\u00e3o, mas evite aspas ou formata\u00e7\u00e3o especial. RESPONDA APENAS COM O TEXTO DO T\u00cdTULO.\n\nExemplos de t\u00edtulos:\n\ud83d\udcc9 Tend\u00eancias do Mercado de A\u00e7\u00f5es\n\ud83c\udf6a Receita Perfeita de Cookies com Gotas de Chocolate\nEvolu\u00e7\u00e3o do Streaming de M\u00fasica\nDicas de Produtividade no Trabalho Remoto\nIntelig\u00eancia Artificial na Sa\u00fade\n\ud83c\udfae Insights sobre Desenvolvimento de Jogos"
+		},
+		"search": {
+			"prompt_template": "Voc\u00ea tem a tarefa de gerar consultas de pesquisa na web. D\u00ea-me uma consulta apropriada para responder \u00e0 minha pergunta no Google. Responda apenas com a consulta. Hoje \u00e9 {{CURRENT_DATE}}.\n\nPergunta:\n{{prompt:end:4000}}",
+			"prompt_length_threshold": 100
+		},
+		"tools": {
+			"prompt_template": "Tools: {{TOOLS}}\nIf a function tool doesn't match the query, return an empty string. Else, pick a function tool, fill in the parameters from the function tool's schema, and return it in the format { \"name\": \"functionName\", \"parameters\": { \"key\": \"value\" } }. Only pick a function if the user asks.  Only return the object. Do not return any other text."
+		}
+	}
+}
